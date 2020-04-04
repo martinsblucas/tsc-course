@@ -1,0 +1,14 @@
+{
+  "name": "tsc-course",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": "git@github.com:martinsblucas/tsc-course.git",
+  "author": "lucas.martins <lucas.martins@celsolisboa.edu.br>",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
