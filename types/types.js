@@ -128,3 +128,20 @@ var optionalHeight = 12;
 console.log(optionalHeight);
 optionalHeight = null;
 console.log(optionalHeight);
+var account;
+var accountHolder;
+account = {
+    balance: 3456,
+    deposit: function (value) {
+        this.balance += value;
+    }
+};
+accountHolder = {
+    name: 'Ana Silva',
+    account: account,
+    contacts: ['34567890', '98765432']
+};
+console.log('Correntista', accountHolder);
+console.log('Saldo da conta', accountHolder.account.balance);
+accountHolder.account.deposit(100);
+console.log('Depósito de 100 reais', accountHolder.account.balance);

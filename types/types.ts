@@ -147,3 +147,31 @@ let optionalHeight: null | number = 12;
 console.log(optionalHeight);
 optionalHeight = null;
 console.log(optionalHeight);
+
+// Challenge 2
+type bankAccount = {
+    balance: number,
+    deposit: (value: number) => void
+}
+type accountHolder = {
+    name: string,
+    account: bankAccount,
+    contacts: string[]
+}
+let account: bankAccount;
+let accountHolder: accountHolder;
+account = {
+    balance: 3456,
+    deposit (value: number): void {
+        this.balance += value
+    }
+};
+accountHolder = {
+    name: 'Ana Silva',
+    account: account,
+    contacts: ['34567890', '98765432']
+};
+console.log('Correntista', accountHolder);
+console.log('Saldo da conta', accountHolder.account.balance);
+accountHolder.account.deposit(100);
+console.log('Depósito de 100 reais', accountHolder.account.balance);
