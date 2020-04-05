@@ -63,7 +63,7 @@ user = {
     age: 36
 };
 console.log(user);
-// Desafio
+// challenge
 /*
 Criar um objeto funcionário com:
 - Array de strings com os nomes dos supervisores
@@ -79,9 +79,52 @@ var hitSpot = function (hour) {
 };
 var employee;
 employee = {
-    supervisors: ['João', 'Fabio', 'Falipe'],
+    supervisors: ['João', 'Fabio', 'Felipe'],
     hitSpot: hitSpot
 };
 console.log('Supervisores: ', employee.supervisors);
 console.log('Batendo ponto às 10: ', employee.hitSpot(10));
 console.log('Batendo ponto às 8: ', employee.hitSpot(8));
+var employee2 = {
+    supervisors: ['Rodrigo', 'Jorge', 'Jonas'],
+    hitSpot: hitSpot
+};
+console.log('Supervisores(2): ', employee2.supervisors);
+console.log('Batendo ponto às 10(2): ', employee2.hitSpot(10));
+console.log('Batendo ponto às 8(2): ', employee2.hitSpot(8));
+var employee3 = {
+    supervisors: ['Leonardo', 'Bruno', 'Ricardo'],
+    hitSpot: hitSpot
+};
+console.log('Supervisores(3): ', employee3.supervisors);
+console.log('Batendo ponto às 10(3): ', employee3.hitSpot(10));
+console.log('Batendo ponto às 8(3): ', employee3.hitSpot(8));
+// union types
+var rating = 10;
+console.log("Minha nota \u00E9 " + rating);
+rating = '9';
+console.log("Minha nota \u00E9 " + rating);
+// never
+var fail = function (msg) {
+    throw new Error(msg);
+};
+var product = {
+    name: 'Sabão',
+    price: -1,
+    validateProduct: function () {
+        if (this.price <= 0) {
+            fail('Preço inválido');
+        }
+    }
+};
+try {
+    product.validateProduct();
+}
+catch (e) {
+    console.error(e.message);
+}
+// optional values
+var optionalHeight = 12;
+console.log(optionalHeight);
+optionalHeight = null;
+console.log(optionalHeight);
