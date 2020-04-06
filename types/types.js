@@ -1,28 +1,28 @@
 "use strict";
 // string
-var name2 = 'Lucas';
+let name2 = 'Lucas';
 console.log(name2);
 // nome = 27;
 // numbers
-var age = 25;
+let age = 25;
 age = 25.9;
 console.log(age);
 // boolean
-var hasHobbies = true;
+let hasHobbies = true;
 hasHobbies = false;
 console.log(hasHobbies);
 // explicit types
-var age2;
+let age2;
 age2 = 25;
 console.log(typeof age2);
 age2 = 'Idade: 25';
 console.log(typeof age2);
 // array
-var hobbies = ['Cozinhar', 'Jogar videogame'];
+let hobbies = ['Cozinhar', 'Jogar videogame'];
 hobbies.push(100);
 console.log(hobbies);
 // tuplas
-var address = ['Rua Barão de Guaratiba', 157, ''];
+let address = ['Rua Barão de Guaratiba', 157, ''];
 console.log(address);
 // enums
 var color;
@@ -32,7 +32,7 @@ var color;
     color[color["white"] = 2] = "white";
     color[color["red"] = 3] = "red";
 })(color || (color = {}));
-var favoriteColor = color.red;
+let favoriteColor = color.red;
 console.log(color);
 console.log(favoriteColor);
 // functions
@@ -49,11 +49,11 @@ function multiply(numA, numB) {
 }
 console.log(multiply(4, 2));
 // function type
-var calculate;
+let calculate;
 calculate = multiply;
 console.log(calculate(4, 4));
 // objects
-var user = {
+let user = {
     name: 'João',
     age: 26
 };
@@ -71,13 +71,13 @@ Criar um objeto funcionário com:
     - Ponto normal (<= 8)
     - Fora do horário (> 8)
  */
-var hitSpot = function (hour) {
+const hitSpot = (hour) => {
     if (hour <= 8)
         return 'Ponto normal';
     else
         return 'Fora do ponto';
 };
-var employee;
+let employee;
 employee = {
     supervisors: ['João', 'Fabio', 'Felipe'],
     hitSpot: hitSpot
@@ -85,14 +85,14 @@ employee = {
 console.log('Supervisores: ', employee.supervisors);
 console.log('Batendo ponto às 10: ', employee.hitSpot(10));
 console.log('Batendo ponto às 8: ', employee.hitSpot(8));
-var employee2 = {
+let employee2 = {
     supervisors: ['Rodrigo', 'Jorge', 'Jonas'],
     hitSpot: hitSpot
 };
 console.log('Supervisores(2): ', employee2.supervisors);
 console.log('Batendo ponto às 10(2): ', employee2.hitSpot(10));
 console.log('Batendo ponto às 8(2): ', employee2.hitSpot(8));
-var employee3 = {
+let employee3 = {
     supervisors: ['Leonardo', 'Bruno', 'Ricardo'],
     hitSpot: hitSpot
 };
@@ -100,18 +100,18 @@ console.log('Supervisores(3): ', employee3.supervisors);
 console.log('Batendo ponto às 10(3): ', employee3.hitSpot(10));
 console.log('Batendo ponto às 8(3): ', employee3.hitSpot(8));
 // union types
-var rating = 10;
-console.log("Minha nota \u00E9 " + rating);
+let rating = 10;
+console.log(`Minha nota é ${rating}`);
 rating = '9';
-console.log("Minha nota \u00E9 " + rating);
+console.log(`Minha nota é ${rating}`);
 // never
-var fail = function (msg) {
+const fail = (msg) => {
     throw new Error(msg);
 };
-var product = {
+const product = {
     name: 'Sabão',
     price: -1,
-    validateProduct: function () {
+    validateProduct() {
         if (this.price <= 0) {
             fail('Preço inválido');
         }
@@ -124,15 +124,15 @@ catch (e) {
     console.error(e.message);
 }
 // optional values
-var optionalHeight = 12;
+let optionalHeight = 12;
 console.log(optionalHeight);
 optionalHeight = null;
 console.log(optionalHeight);
-var account;
-var accountHolder;
+let account;
+let accountHolder;
 account = {
     balance: 3456,
-    deposit: function (value) {
+    deposit(value) {
         this.balance += value;
     }
 };
@@ -145,3 +145,4 @@ console.log('Correntista', accountHolder);
 console.log('Saldo da conta', accountHolder.account.balance);
 accountHolder.account.deposit(100);
 console.log('Depósito de 100 reais', accountHolder.account.balance);
+//# sourceMappingURL=types.js.map

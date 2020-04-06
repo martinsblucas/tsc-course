@@ -1,3 +1,4 @@
 "use strict";
-var test = 'Vasco da Gama';
+const test = 'Vasco da Gama';
 console.log(test);
+//# sourceMappingURL=basic.js.map
