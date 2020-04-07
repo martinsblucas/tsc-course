@@ -86,8 +86,7 @@ const double = (value: number): number => value*2;
 console.log("Exercício 1: ", double(10));
 
 //2
-const sayHelloAgain = (name: string = ''): void => {
-    name = name ? name : 'Pessoa';
+const sayHelloAgain = (name: string = 'Pessoa'): void => {
     console.log(`Olá, ${name}`);
 };
 sayHelloAgain();
@@ -95,4 +94,54 @@ sayHelloAgain('Anna');
 
 //3
 const nums: number[] = [-3, 33, 38, 5];
-console.log(...nums);
+console.log(Math.min(...nums));
+
+//4
+const array = [55, 20];
+array.push(...nums);
+console.log(array);
+
+//5
+const performance2: number[] = [8.5, 6.3, 9.4];
+const [av1, av2, av3] = performance2;
+console.log(av1, av2, av3);
+
+//6
+const scientist: {
+    firstName: string,
+    experience: number
+} = {
+    firstName: 'Will',
+    experience: 12
+};
+const { firstName: fn, experience: xp } = scientist;
+console.log(fn, xp);
+
+// promisses
+
+function await3s(callback: (dado: string) => void) {
+    setTimeout(() => {
+        callback('3s depois...');
+    }, 3000)
+}
+
+await3s((result: string) => {
+    console.log(result);
+});
+
+function await3sPromise() {
+    return new Promise((resolve: any) => {
+        setTimeout(() => {
+            resolve('3s depois...');
+        }, 3000)
+    });
+}
+await3sPromise()
+    .then(data => console.log(data));
+
+fetch('https://swapi.co/api/people/1')
+    .then(res => res.json())
+    .then(character => character.films)
+    .then(films => fetch(films[0]))
+    .then(resFilm => resFilm.json())
+    .then(film => console.log(film));
